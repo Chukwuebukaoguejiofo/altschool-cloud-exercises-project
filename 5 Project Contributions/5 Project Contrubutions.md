@@ -1,0 +1,1 @@
+For all these Projects, I forked the repositories from github and then now cloned to add some commits and finally pushed the repository online. Then, made a Pull request.
