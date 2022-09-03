@@ -16,4 +16,4 @@
  Exercise 5, has to do with me installing PHP 7.4 on my local linux machine using the ppa:ondrej/php package repo. The screenshot shows the content of /etc/apt/sources.list and the output of using the php -v command.
 
  # EXERCISE 6
- Exercise 6 has to do with me submitting git config -l , git remote -v and git log of my local repository altschool-cloud-exercises.
+ Exercise 6 has to do with me submitting the output of git config -l , git remote -v and git log of my local repository altschool-cloud-exercises. I also created an account on Git Lab.
