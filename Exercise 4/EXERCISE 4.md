@@ -1,0 +1,7 @@
+# TWO SSH CONNECTION FROM ONE SYSTEM TO ANOTHER
+
+# 1. FROM MY CLIENT MACHINE
+![](Images/copyymysshpub.jpg)
+
+# 2. CONNECTING TO MY SERVER MACHINE
+![](Images/SSHSuccess.jpg)
