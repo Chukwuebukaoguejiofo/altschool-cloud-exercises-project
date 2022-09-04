@@ -1,8 +1,8 @@
-# **OUTPUT OF GIT CONFIG** -L
+# **OUTPUT OF GIT CONFIG -L**
 ![](gitconfigoutput.png)
 
-# **OUTPUT OF GIT REMOTE -V
+# **OUTPUT OF GIT REMOTE -V**
 ![](gitremotevoutput.png)
 
 # **OUTPUT OF GIT LOG**
-![git](gitlogs.png)
+![](gitlogs.png)
