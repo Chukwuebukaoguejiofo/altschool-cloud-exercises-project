@@ -5,4 +5,4 @@
 ![](gitremotevoutput.png)
 
 # **OUTPUT OF GIT LOG**
-![](gitlogs.png)
+![git](gitlogs.png)
