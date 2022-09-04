@@ -1,6 +1,5 @@
 # OUTPUT OF PHP-V COMMAND
-![](Images/contentofphp-v.png)
+![](Images/outputofphp-v.png)
 
 # OUTPUT OF ETC/APT/SOURCES.LIST
-![](Images/contentofsourceslist.png)
-![](Images/contentofsourceslist2.png)
+![](Images/outputetcsourceslist.png)

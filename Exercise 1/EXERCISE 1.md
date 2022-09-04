@@ -1,7 +1,7 @@
 This lists out the output of my ifconfig command for my vagrant setup.
 
 # OUTPUT:
-![](Ifconfigdisplay.png)
+![](ifconfigoutput.png)
 
 # CONTENTS OF THE VAGRANT FILE:
 
