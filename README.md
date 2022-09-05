@@ -20,6 +20,9 @@
  # EXERCISE 6
  [Exercise6](https://github.com/Chukwuebukaoguejiofo/altschool-cloud-exercises/tree/main/Exercise%206) has to do with me submitting the output of git config -l , git remote -v and git log of my local repository altschool-cloud-exercises. I also created an account on Git Lab.
 
+ # EXERCISE 7
+ [Exercise7](https://github.com/Chukwuebukaoguejiofo/altschool-cloud-exercises-project/tree/main/Exercise%207) has to do with 10 UBUNTU 20.04 LTS Security Hardening
+
 # 5 PROJECT CONTRIBUTIONS
 
 [5PROJECTCONTRIBUTIONS](https://github.com/Chukwuebukaoguejiofo/altschool-cloud-exercises/tree/main/5%20Project%20Contributions)
