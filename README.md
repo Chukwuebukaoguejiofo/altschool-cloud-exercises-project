@@ -23,6 +23,9 @@
  # EXERCISE 7
  [Exercise7](https://github.com/Chukwuebukaoguejiofo/altschool-cloud-exercises-project/tree/main/Exercise%207) has to do with 10 UBUNTU 20.04 LTS Security Hardening
 
+ # EXERCISE 8
+ [Exercise8] (https://github.com/Chukwuebukaoguejiofo/altschool-cloud-exercises-project/blob/main/Exercise%208/EXERCISE%208.MD) has to do with creating a script to run every hour, while saving system memory(RAM) usage and sent out by midnight to a specified email address and starts over for the new day
+
 # 5 PROJECT CONTRIBUTIONS
 
 [5PROJECTCONTRIBUTIONS](https://github.com/Chukwuebukaoguejiofo/altschool-cloud-exercises/tree/main/5%20Project%20Contributions)
