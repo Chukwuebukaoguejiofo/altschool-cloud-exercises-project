@@ -1,0 +1,52 @@
+---
+
+ - hosts: all
+   become: true
+   pre_tasks:
+
+   - name: install updates (Ubuntu)
+     tags: always
+     apt:
+        upgrade: dist
+        update_cache: yes
+
+ - hosts: web_servers
+   become: true
+   tasks:
+
+   - name: install apache and php for Ubuntu servers
+     tags: apache,apache2,ubuntu
+     apt:
+       name:
+           - apache2
+           - libapache2-mod-php
+       state: latest
+
+   - name: Start apache2 service
+     service:
+      name: apache2
+      state: started
+
+   - name: copy php file for site
+     tags: apache,apache,apache2
+     copy:
+       src: /home/vagrant/ansible_servers/index.php
+       dest: /var/www/html/index.php
+       owner: root
+       group: root
+       mode: 0644
+
+   - name: set timezone to Africa/Lagos
+     timezone:
+      name: Africa/Lagos
+
+   - name: restart apache2 service
+     service:
+      name: apache2
+      state: restarted
+
+
+
+
+
+
