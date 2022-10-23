@@ -1,0 +1,5 @@
+# **RENDERED PAGE OF THE DEPLOYMENT OF A LARAVEL APPLICATION USING DEBIAN 11 WEB SERVER THROUGH AWS.**
+![](Images/miniproject.png)
+
+# **LINK TO THE PAGE**
+ http://miniproject.name.ng/
