@@ -1,0 +1,55 @@
+---
+- name: Add php repository
+  apt_repository:
+   repo: 'ppa:ondrej/php'
+
+
+- name: Install PHP
+  apt: name=php{{php_version}} state=latest
+
+- name: Install PHP MB
+  apt: name=php{{php_version}}-mbstring state=latest
+
+- name: Install PHP XML
+  apt: name=php-xml state=latest
+
+- name: Install unzip
+  apt: name=unzip state=latest
+
+- name: install php curl
+  shell: sudo apt-get install php-curl -y
+
+- name: install php 8.0 repositories
+  shell: |
+   sudo apt install software-properties-common
+   sudo add-apt-repository ppa:ondrej/apache2 -y
+   sudo add-apt-repository ppa:ondrej/php -y
+   sudo apt update -y
+   sudo apt-get -y install apt-transport-https lsb-release ca-certificates curl
+   sudo apt-get install apt-transport-https gnupg2 ca-certificates -y
+   sudo apt install -y php8.0-common php8.0-cli -y
+
+
+- name: install lamp stack
+  apt:
+    pkg:
+      - php8.0-mysql
+      - php8.0-curl
+      - php8.0-cgi
+      - php8.0-xsl
+      - php8.0-gd
+      - php8.0-mbstring
+      - php8.0-zip
+      - php8.0-xmlrpc
+      - php8.0-soap
+      - php8.0-intl
+      - libapache2-mod-php
+    state: present
+
+- name: Install Main PHP Packages
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: [ 'php-fpm', 'php-mysql' ]
+
+- name: Install PHP Modules / Extensions
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: "{{ php_packages }}"

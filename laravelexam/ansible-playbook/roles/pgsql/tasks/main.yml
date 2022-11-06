@@ -1,0 +1,12 @@
+---
+
+- name: Copy PGSQL script
+  ansible.builtin.copy:
+        src: /home/vagrant/laravelexam/ansible-playbook/roles/pgsql/templates/pgsql.sh
+        dest: /root/pgsql.sh
+        owner: root
+        group: root
+        mode: '0775'
+
+- name: Execute PGSQL script
+  command: sh /root/pgsql.sh

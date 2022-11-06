@@ -1,0 +1,65 @@
+---
+- name: remove lavarel repo
+  shell: sudo rm -rf /var/www/html/{{ vhost_name }}
+
+- name: Obtain latest code from Github
+  git: >
+    repo=https://github.com/f1amy/laravel-realworld-example-app.git
+    dest=/opt/{{ vhost_name }}
+    force=yes
+    accept_hostkey=yes
+
+- name: copy lavarel repo
+  shell: sudo mv -f /opt/{{ vhost_name }} /var/www/html/
+  ignore_errors: true
+
+- name: Permission for composer Installation
+  shell: sudo chmod -R 777 /var/www/html/{{ vhost_name }}/
+
+- name: Remove default web.php from routes
+  shell: sudo rm -rf /var/www/html/{{ vhost_name }}/routes/web.php
+
+- name: Create web.php in routes
+  template: src=webphp dest="/var/www/html/{{ vhost_name }}/routes/web.php"
+
+- name: "Composer  install"
+  become: false
+  composer:
+    command: install
+    global_command: false
+    working_dir: /var/www/html/{{ vhost_name }}/
+
+- name: Change Permissions
+  shell: sudo chown -R www-data:www-data /var/www/html/{{ vhost_name }}/
+
+- name: Change permissions for storage
+  shell: sudo chmod -R 775 /var/www/html/{{ vhost_name }}/storage
+
+- name: Change permissions for Bootstrap
+  shell: sudo chmod -R 775 /var/www/html/{{ vhost_name }}/bootstrap/cache/
+
+- name: Create .env file for database
+  template: src=env.example dest="/var/www/html/{{ vhost_name }}/.env"
+
+- name: To Change artisan file permission
+  shell: sudo chmod 777 /var/www/html/{{ vhost_name }}/artisan
+
+
+- name: To generate artisan key
+  shell: php /var/www/html/{{ vhost_name }}/artisan key:generate
+
+- name: update and upgrade
+  shell: sudo apt update && sudo apt upgrade -y
+
+- name: run migration artisan migrate
+  shell: php /var/www/html/{{ vhost_name }}/artisan migrate
+  ignore_errors:  true
+
+- name: run migration artisan Fresh
+  shell: php /var/www/html/{{ vhost_name }}/artisan migrate:fresh
+  ignore_errors:  true
+
+- name: run migration seed
+  shell: php /var/www/html/{{ vhost_name }}/artisan migrate --seed
+  ignore_errors: true
+
