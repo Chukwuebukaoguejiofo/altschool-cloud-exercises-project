@@ -1,0 +1,7 @@
+---
+
+- name: restart apache2
+  tags: restart
+  service:
+    state: restarted
+    name: apache2
